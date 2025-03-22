@@ -66,7 +66,7 @@ def preprocess_data(source, tokenizer: PreTrainedTokenizer) -> Dict:
 def print_gpu_utilization():
     nvidia_smi.nvmlInit()
     deviceCount = nvidia_smi.nvmlDeviceGetCount()
-    for i in range(deviceCount):
+    for i in range(1, deviceCount):
         handle = nvidia_smi.nvmlDeviceGetHandleByIndex(i)
         info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
         print("Device {}: {}, Memory : ({:.2f}% free): {}(total), {} (free), {} (used)".format(i, nvidia_smi.nvmlDeviceGetName(handle), 100*info.free/info.total, info.total, info.free, info.used))
