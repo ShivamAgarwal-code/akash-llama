@@ -3,6 +3,7 @@ import logging
 import nvidia_smi
 import os
 import torch
+import time
 
 from datasets import load_dataset
 from huggingface_hub import login
@@ -42,6 +43,7 @@ def huggingface_login():
         raise Exception('Need to pass hugging face access token as environment variable.')
 
     login(token=HUGGING_FACE_TOKEN)
+    time.sleep(10)
 
 def safe_save_model_for_hf_trainer(trainer: Trainer, output_dir: str, job_id : int, storj : Storj):
     """
