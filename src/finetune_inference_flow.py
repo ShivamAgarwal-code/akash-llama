@@ -23,7 +23,7 @@ class ModelArguments:
     )
     new_model_name: Optional[str] = field(
         default="agora-llama-7b-chat",
-        metadata={"help": "The name for your fine-tuned model"}
+        metadata={"help": "The name for your fine-tuned model is:"}
     )
 
 @dataclass
